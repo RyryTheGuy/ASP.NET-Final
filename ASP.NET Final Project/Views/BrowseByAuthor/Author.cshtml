@@ -1,0 +1,29 @@
+﻿@using ASP.NET_Final_Project.Models;
+@model BrowseByAuthor
+
+@{
+    ViewBag.Title = "Browse By Author";
+}
+
+<section id="main-author">
+    <h2 class="author-header text-center">Browse By Author</h2>
+    <div class="bottom-line"></div>
+    <div class="inner-container">
+        @Html.Partial("~/Views/Shared/_Nav.cshtml")
+        <div class="author-table">
+            @using (Html.BeginForm("Author", "BrowseByAuthor", FormMethod.Post))
+            {
+                @Html.DropDownListFor(a => a.AuthorSelected, Model.AllAuthors, "Select an Author", new { onchange = "this.form.submit();", @class = "author-select" })
+            }
+            @if (Model.BooksByAuthor.Count != 0)
+            {
+                @Html.Partial("~/Views/Shared/_AuthorTable.cshtml", Model)
+            }
+        </div>
+        <div></div>
+    </div>
+
+    <footer class="text-center">
+        <p>&copy; 2020 - Ryan Roemer's Final ASP.NET Project</p>
+    </footer>
+</section>

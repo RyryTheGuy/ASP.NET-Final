@@ -1,0 +1,27 @@
+﻿@using ASP.NET_Final_Project.Models;
+@model IEnumerable<BOOK>
+
+@{
+    ViewBag.Title = "Inventory";
+}
+
+<section id="main-inventory">
+    <h2 class="inventory-header text-center">Browse Inventory</h2>
+    <div class="bottom-line"></div>
+    <div class="inner-container">
+        @Html.Partial("~/Views/Shared/_Nav.cshtml")
+        <div class="booklist">
+            @foreach (var book in Model)
+            {
+                string code = book.BOOK_CODE;
+
+                <a href="@Url.Action("BookDetails", "Home", new {id = code})">
+                    <img src="~/Images/@book.BOOK_CODE/thumb.jpg" alt="@code" class="books" />
+                </a>
+            }
+        </div>
+    </div>
+    <footer class="text-center">
+        <p>&copy; 2020 - Ryan Roemer's Final ASP.NET Project</p>
+    </footer>
+</section>

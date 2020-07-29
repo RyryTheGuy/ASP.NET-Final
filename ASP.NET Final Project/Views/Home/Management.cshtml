@@ -1,0 +1,97 @@
+﻿@using System.Web.UI.WebControls
+@using ASP.NET_Final_Project.Models;
+@model ASP.NET_Final_Project.Models.ManagementFilter
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    
+    <script>
+        function ConfirmSubmission(userData) {
+            var target = $(".manage-table");
+            target.empty();
+
+            if (!userData) {
+                target.append("<em>No User Information Received</em>");
+            } else {
+                target.append("<p class='thankyou'>Thank you for sharing your comments with Henry's Bookstore Management. We will be in touch with you shortly via email!</p>")
+            }
+        }
+    </script>
+}
+
+
+@{
+    ViewBag.Title = "Management";
+}
+
+<section id="main-manage">
+    <h2 class="manage-header text-center">
+        Share your Comments with Management
+    </h2>
+    <div class="bottom-line"></div>
+    <div class="inner-container">
+        @Html.Partial("~/Views/Shared/_Nav.cshtml")
+        <div class="manage-table">
+            @using (Ajax.BeginForm("Management", "Home", new AjaxOptions
+            {
+                HttpMethod = "Post",
+                InsertionMode = InsertionMode.Replace,
+                OnComplete = "ConfirmSubmission"
+            }))
+            {
+                <table class="text-center">
+                    <tr>
+                        <th>First Name</th>
+                        <td>
+                            @Html.EditorFor(a => a.firstName)
+                            @Html.ValidationMessageFor( a => a.firstName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td>
+                            @Html.EditorFor(a => a.lastName)
+                            @Html.ValidationMessageFor( a => a.lastName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>
+                            @Html.EditorFor(a => a.email)
+                            @Html.ValidationMessageFor( a => a.email)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Confirm Email</th>
+                        <td>
+                            @Html.EditorFor(a => a.confirmEmail)
+                            @Html.ValidationMessageFor( a => a.confirmEmail)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Branch</th>
+                        <td>@Html.DropDownListFor(a => a.branch, Model.AllBranches, "Select a Branch", new { @class = "select-input", @required = "required" })</td>
+                    </tr>
+                    <tr>
+                        <th>Comments</th>
+                        <td>
+                            @Html.EditorFor(a => a.comments)
+                            @Html.ValidationMessageFor(a => a.comments)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="reset" value="Reset"/>
+                            <input type="submit" value="Submit"/>
+                        </td>
+                    </tr>
+                </table>
+
+            }
+        </div>
+    </div>
+    <footer class="text-center">
+        <p>&copy; 2020 - Ryan Roemer's Final ASP.NET Project</p>
+    </footer>
+</section>

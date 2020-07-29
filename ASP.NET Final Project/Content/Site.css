@@ -1,0 +1,249 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("../Images/wood.jpg");
+}
+
+a {
+    color: #0000ff; }
+a:hover {
+    color: #000088; }
+
+ul {
+    list-style: none;
+}
+
+.bottom-line {
+    height: 2px;
+    width: 30rem;
+    background: #000;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.container {
+    padding: 1rem 20rem;
+}
+
+.content {
+    background: #fffdd0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+header {
+    padding: 2.7rem;
+    background-image: url("../Images/books.jpg");
+}
+
+    header h1 {
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+        font-weight: 700;
+    }
+
+nav {
+    color: #999;
+    text-align: left;
+}
+
+    nav ul {
+        background-color: #eee;
+    }
+
+        nav ul li {
+            padding: 0.5rem 0.5rem 0.5rem 2rem;
+        }
+
+#main-home .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 10rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    #main-home .grid .card {
+        margin: 1rem 2rem;
+        padding: 2rem;
+        background: #999;
+        border: 1px #5cff54 solid;
+    }
+
+        #main-home .grid .card h4 {
+            padding-bottom: 0.5rem;
+        }
+
+        #main-home .grid .card img {
+            border: 1px #5cff54 solid;
+            width: 15rem;
+        }
+
+#main-inventory .inventory-header {
+    font-size: 2rem;
+    color: #000;
+    padding: 1rem 0 0.5rem 0;
+}
+
+#main-inventory .inner-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 5rem;
+}
+
+    #main-inventory .inner-container .booklist {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+    }
+
+        #main-inventory .inner-container .booklist .books {
+            width: 125px;
+            height: 194px;
+        }
+
+#main-bookdetails .detail-header {
+    font-size: 2rem;
+    color: #000;
+    padding: 1rem 0 0.5rem 0;
+}
+
+#main-bookdetails .inner-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 4rem;
+}
+
+    #main-bookdetails .inner-container .showcase .book-image {
+        width: 397px;
+        height: 600px;
+    }
+
+#main-bookdetails table {
+    color: #000;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #main-bookdetails table tr:nth-child(even) {
+        background-color: #999;
+    }
+
+    #main-bookdetails table tr:nth-child(odd) {
+        background-color: #eee;
+    }
+
+    #main-bookdetails table tr th {
+        height: 2rem;
+    }
+
+    #main-bookdetails table tr td {
+        padding: 0.5rem;
+    }
+
+#main-bookdetails h4 {
+    color: black;
+    padding: 1rem 0 0.5rem 0;
+}
+
+#main-author .author-header {
+    font-size: 2rem;
+    color: #000;
+    padding: 1rem 0 0.5rem 0;
+}
+
+#main-author .inner-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 5rem;
+}
+
+    #main-author .inner-container .author-table .author-select {
+        padding: 0 2rem 0 0;
+        margin-bottom: 1.5rem;
+    }
+
+    #main-author .inner-container .author-table table {
+        color: #000;
+        background-color: #eee;
+        border: 1px solid black;
+        border-collapse: separate;
+        width: 100%;
+    }
+
+        #main-author .inner-container .author-table table tr:nth-child(even) {
+            background-color: #fffdd0;
+        }
+
+        #main-author .inner-container .author-table table tr:nth-child(odd) {
+            background-color: #e0deb8;
+        }
+
+        #main-author .inner-container .author-table table tr th {
+            padding: 1rem;
+        }
+
+        #main-author .inner-container .author-table table tr td {
+            padding: 0.5rem;
+        }
+
+#main-manage .manage-header {
+    font-size: 2rem;
+    color: #000;
+    padding: 1rem 0 0.5rem 0; }
+
+#main-manage .inner-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 5rem; }
+
+    #main-manage .manage-table .thankyou {
+        background-color: #eee;
+        color: #000000;
+        padding: 2rem;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+
+    #main-manage .manage-table table {
+        color: #000;
+        border-collapse: separate;
+        width: 100%; }
+
+        #main-manage .manage-table table tr th {
+            padding: 0.5rem; }
+
+        #main-manage .manage-table table tr td {
+            padding: 0.5rem; }
+
+            #main-manage .manage-table table tr td .text-input {
+                width: 100%;
+                padding: 0.2rem; }
+
+            #main-manage .manage-table table tr td .select-input {
+                padding: 0.2rem 0.5rem 0.2rem 0.2rem; }
+
+
+footer {
+    color: black;
+}
+
+    footer p {
+        padding: 2rem;
+    }

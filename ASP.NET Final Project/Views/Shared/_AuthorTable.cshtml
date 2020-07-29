@@ -1,0 +1,25 @@
+﻿@using ASP.NET_Final_Project.Models;
+@using System.Globalization;
+@model BrowseByAuthor
+
+<table class="text-center">
+    <tr>
+        <th>Book Code</th>
+        <th>Title</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th>Paperback?</th>
+        <th>Publisher</th>
+    </tr>
+    @foreach (var book in Model.BooksByAuthor)
+    {
+        <tr>
+            <td><a href="@Url.Action("BookDetails", "Home", new {id = book.BOOK_CODE})">@book.BOOK_CODE</a></td>
+            <td>@CultureInfo.CurrentCulture.TextInfo.ToTitleCase(book.TITLE)</td>
+            <td>@book.TYPE</td>
+            <td>$@(Math.Round((decimal)book.PRICE, 2))</td>
+            <td>@(book.PAPERBACK == "1" ? "Yes" : "No")</td>
+            <td><a href="@Url.Action("Publisher", "BrowseByPublisher", new { id = book.PUBLISHER_CODE })">@book.PUBLISHER.PUBLISHER_NAME</a></td>
+        </tr>
+    }            
+</table>

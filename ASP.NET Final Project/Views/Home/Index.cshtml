@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<section id="main-home">
+    <div class="grid">
+        <a href="@Url.Action("Inventory", "Home")" class="card">
+            <h4>Browse Inventory</h4>
+            <img src="~/Images/inventory.jpg" alt="Bookshelves" />
+        </a>
+        <a href="@Url.Action("Author", "BrowseByAuthor")" class="card">
+            <h4>Browse By Author</h4>
+            <img src="~/Images/author.jpg" alt="Writing" />
+        </a>
+        <a href="@Url.Action("Publisher", "BrowseByPublisher")" class="card">
+            <h4>Browse By Publisher</h4>
+            <img src="~/Images/publisher.jpg" alt="Publisher" />
+        </a>
+        <a href="@Url.Action("Location", "BrowseByLocation")" class="card">
+            <h4>Browse By Location</h4>
+            <img src="~/Images/bookstore.jpg" alt="Book Store" />
+        </a>
+    </div>
+    <footer class="text-center">
+        <p>&copy; 2020 - Ryan Roemer's Final ASP.NET Project</p>
+    </footer>
+</section>

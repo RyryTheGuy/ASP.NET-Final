@@ -1,0 +1,22 @@
+﻿@using ASP.NET_Final_Project.Models;
+@using System.Globalization;
+@model BrowseByLocation
+
+<table class="text-center">
+    <tr>
+        <th>Branch Number</th>
+        <td>@Model.LocationInfo.BRANCH_NUM</td>
+    </tr>
+    <tr>
+        <th>Branch Name</th>
+        <td>@Model.LocationInfo.BRANCH_NAME</td>
+    </tr>
+    <tr>
+        <th>Branch Location</th>
+        <td>@Model.LocationInfo.BRANCH_LOCATION</td>
+    </tr>
+    <tr>
+        <th>Number of Employees</th>
+        <td>@Model.LocationInfo.NUM_EMPLOYEES</td>
+    </tr>
+</table>

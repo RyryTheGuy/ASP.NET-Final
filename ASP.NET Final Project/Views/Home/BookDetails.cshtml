@@ -1,0 +1,69 @@
+﻿@using ASP.NET_Final_Project.Models;
+@using System.Globalization;
+@using System.Web.Configuration
+
+@model ASP.NET_Final_Project.Models.BookDetails
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<section id="main-bookdetails">
+    <h2 class="detail-header text-center">Book Details</h2>
+    <div class="bottom-line"></div>
+    <div class="inner-container">
+        @Html.Partial("~/Views/Shared/_Nav.cshtml")
+        <div class="showcase">
+            <img src="~/Images/@Model.bookCode/large.jpg" class="book-image" />
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td class="bold">Title</td>
+                    <td>@CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Model.bookTitle)</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>@Model.bookType</td>
+                </tr>
+                <tr>
+                    <td class="bold">Price</td>
+                    <td>$@(Math.Round(Model.bookPrice, 2))</td>
+                </tr>
+                <tr>
+                    <td class="bold">Paperback</td>
+                    <td>@Model.bookPaperback</td>
+                </tr>
+                <tr>
+                    <td class="bold">Publisher</td>
+                    <td><a href="@Url.Action("Publisher", "BrowseByPublisher", new { id = Model.bookPublisherCode})">@Model.bookPublisher</a></td>
+                </tr>
+                <tr>
+                    <td class="bold">Book Code</td>
+                    <td>@Model.bookCode</td>
+                </tr>
+                <tr>
+                    <td class="bold">Written By</td>
+                    <td><a href="@Url.Action("Author", "BrowseByAuthor", new { id = Model.bookAuthorCode})">@Model.bookAuthorName</a></td>
+                </tr>
+            </table>
+            <h4 class="text-center">Browse by location</h4>
+            <table>
+                <tr>
+                    <th class="bold">Location</th>
+                    <th class="bold">On Hand Quantity</th>
+                </tr>
+                @for (int i = 0; i < Model.branches.Length; i++)
+                {
+                    <tr>
+                        <td><a href="@Url.Action("Location", "BrowseByLocation", new { id = Model.branches[i].BRANCH_NUM })">@Model.branches[i].BRANCH_NAME</a></td>
+                        <td>@Model.onHand[i]</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <footer class="text-center">
+        <p>&copy; 2020 - Ryan Roemer's Final ASP.NET Project</p>
+    </footer>
+</section>

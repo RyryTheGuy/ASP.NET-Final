@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37C68EEF-EFC2-4185-B86C-3C7E8C60E0B9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASP.NET_Final_Project</RootNamespace>
+    <AssemblyName>ASP.NET Final Project</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FoolproofValidation, Version=0.9.5851.39121, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Foolproof.0.9.4518\lib\net45\FoolproofValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BrowseByAuthorController.cs" />
+    <Compile Include="Controllers\BrowseByLocationController.cs" />
+    <Compile Include="Controllers\BrowseByPublisherController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AUTHOR.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BOOK.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookDetails.cs" />
+    <Compile Include="Models\BRANCH.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BrowseByAuthor.cs" />
+    <Compile Include="Models\BrowseByLocation.cs" />
+    <Compile Include="Models\BrowseByPublisher.cs" />
+    <Compile Include="Models\FinalEFModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalEFModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinalEFModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FinalEFModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalEFModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INVENTORY.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManagementFilter.cs" />
+    <Compile Include="Models\PUBLISHER.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WROTE.cs">
+      <DependentUpon>FinalEFModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client Scripts\mvcfoolproof.unobtrusive.js" />
+    <Content Include="Client Scripts\mvcfoolproof.unobtrusive.min.js" />
+    <Content Include="Client Scripts\MvcFoolproofJQueryValidation.js" />
+    <Content Include="Client Scripts\MvcFoolproofJQueryValidation.min.js" />
+    <Content Include="Client Scripts\MvcFoolproofValidation.js" />
+    <Content Include="Client Scripts\MvcFoolproofValidation.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\0180\large.jpg" />
+    <Content Include="Images\0180\thumb.jpg" />
+    <Content Include="Images\0189\large.jpg" />
+    <Content Include="Images\0189\thumb.jpg" />
+    <Content Include="Images\0189\thumb.png" />
+    <Content Include="Images\0200\large.jpg" />
+    <Content Include="Images\0200\thumb.jpg" />
+    <Content Include="Images\0378\large.jpg" />
+    <Content Include="Images\0378\thumb.jpg" />
+    <Content Include="Images\079X\large.jpg" />
+    <Content Include="Images\079X\thumb.jpg" />
+    <Content Include="Images\079X\thumb.png" />
+    <Content Include="Images\0808\large.jpg" />
+    <Content Include="Images\0808\thumb.jpg" />
+    <Content Include="Images\1351\large.jpg" />
+    <Content Include="Images\1351\thumb.jpg" />
+    <Content Include="Images\1382\large.jpg" />
+    <Content Include="Images\1382\thumb.jpg" />
+    <Content Include="Images\138X\large.jpg" />
+    <Content Include="Images\138X\thumb.jpg" />
+    <Content Include="Images\2226\large.jpg" />
+    <Content Include="Images\2226\thumb.jpg" />
+    <Content Include="Images\2281\large.jpg" />
+    <Content Include="Images\2281\thumb.jpg" />
+    <Content Include="Images\2766\large.jpg" />
+    <Content Include="Images\2766\thumb.jpg" />
+    <Content Include="Images\2908\large.jpg" />
+    <Content Include="Images\2908\thumb.jpg" />
+    <Content Include="Images\3350\large.jpg" />
+    <Content Include="Images\3350\thumb.gif" />
+    <Content Include="Images\3350\thumb.jpg" />
+    <Content Include="Images\3743\large.jpg" />
+    <Content Include="Images\3743\thumb.jpg" />
+    <Content Include="Images\3906\large.jpg" />
+    <Content Include="Images\3906\thumb.jpg" />
+    <Content Include="Images\5163\large.jpg" />
+    <Content Include="Images\5163\thumb.jpg" />
+    <Content Include="Images\5790\large.jpg" />
+    <Content Include="Images\5790\thumb.jpg" />
+    <Content Include="Images\6128\large.jpg" />
+    <Content Include="Images\6128\thumb.jpg" />
+    <Content Include="Images\6328\large.jpg" />
+    <Content Include="Images\6328\thumb.jpg" />
+    <Content Include="Images\669X\large.jpg" />
+    <Content Include="Images\669X\thumb.jpg" />
+    <Content Include="Images\6908\large.jpg" />
+    <Content Include="Images\6908\thumb.jpg" />
+    <Content Include="Images\7405\large.jpg" />
+    <Content Include="Images\7405\thumb.jpg" />
+    <Content Include="Images\7443\large.jpg" />
+    <Content Include="Images\7443\thumb.jpg" />
+    <Content Include="Images\7559\large.jpg" />
+    <Content Include="Images\7559\thumb.jpg" />
+    <Content Include="Images\8092\large.jpg" />
+    <Content Include="Images\8092\large2.jpg" />
+    <Content Include="Images\8092\thumb.jpg" />
+    <Content Include="Images\8720\large.jpg" />
+    <Content Include="Images\8720\thumb.jpg" />
+    <Content Include="Images\9611\large.jpg" />
+    <Content Include="Images\9611\thumb.jpg" />
+    <Content Include="Images\9627\large.jpg" />
+    <Content Include="Images\9627\thumb.jpg" />
+    <Content Include="Images\9701\large.jpg" />
+    <Content Include="Images\9701\thumb.jpg" />
+    <Content Include="Images\9882\large.jpg" />
+    <Content Include="Images\9882\thumb.jpg" />
+    <Content Include="Images\9883\large.jpg" />
+    <Content Include="Images\9883\thumb.jpg" />
+    <Content Include="Images\9931\large.jpg" />
+    <Content Include="Images\9931\thumb.jpg" />
+    <Content Include="Images\author.jpg" />
+    <Content Include="Images\books.jpg" />
+    <Content Include="Images\bookstore.jpg" />
+    <Content Include="Images\inventory.jpg" />
+    <Content Include="Images\publisher.jpg" />
+    <Content Include="Images\wood.jpg" />
+    <Content Include="Models\FinalEFModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalEFModel.edmx</DependentUpon>
+      <LastGenOutput>FinalEFModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FinalEFModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FinalEFModel.edmx</DependentUpon>
+      <LastGenOutput>FinalEFModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Images\0180\Thumbs.db" />
+    <Content Include="Images\0189\Thumbs.db" />
+    <Content Include="Images\0200\Thumbs.db" />
+    <Content Include="Images\0378\Thumbs.db" />
+    <Content Include="Images\079X\Thumbs.db" />
+    <Content Include="Images\0808\Thumbs.db" />
+    <Content Include="Images\1351\Thumbs.db" />
+    <Content Include="Images\1382\Thumbs.db" />
+    <Content Include="Images\138X\Thumbs.db" />
+    <Content Include="Images\2226\Thumbs.db" />
+    <Content Include="Images\2281\Thumbs.db" />
+    <Content Include="Images\2766\Thumbs.db" />
+    <Content Include="Images\2908\Thumbs.db" />
+    <Content Include="Images\3350\Thumbs.db" />
+    <Content Include="Images\3743\Thumbs.db" />
+    <Content Include="Images\3906\Thumbs.db" />
+    <Content Include="Images\5163\Thumbs.db" />
+    <Content Include="Images\5790\Thumbs.db" />
+    <Content Include="Images\6128\Thumbs.db" />
+    <Content Include="Images\6328\Thumbs.db" />
+    <Content Include="Images\669X\Thumbs.db" />
+    <Content Include="Images\6908\Thumbs.db" />
+    <Content Include="Images\7405\Thumbs.db" />
+    <Content Include="Images\7443\Thumbs.db" />
+    <Content Include="Images\7559\Thumbs.db" />
+    <Content Include="Images\8092\Thumbs.db" />
+    <Content Include="Images\8720\Thumbs.db" />
+    <Content Include="Images\9611\Thumbs.db" />
+    <Content Include="Images\9627\Thumbs.db" />
+    <Content Include="Images\9701\Thumbs.db" />
+    <Content Include="Images\9882\Thumbs.db" />
+    <Content Include="Images\9883\Thumbs.db" />
+    <Content Include="Images\9931\Thumbs.db" />
+    <EntityDeploy Include="Models\FinalEFModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FinalEFModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FinalEFModel.edmx.diagram">
+      <DependentUpon>FinalEFModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.0.js" />
+    <Content Include="Scripts\jquery-3.5.0.min.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.js" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Inventory.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\BookDetails.cshtml" />
+    <Content Include="Views\BrowseByAuthor\Author.cshtml" />
+    <Content Include="Views\Shared\_AuthorTable.cshtml" />
+    <Content Include="Views\BrowseByPublisher\Publisher.cshtml" />
+    <Content Include="Views\Shared\_PublisherTable.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\BrowseByLocation\Location.cshtml" />
+    <Content Include="Views\Shared\_LocationTable.cshtml" />
+    <Content Include="Views\Shared\_BooksOnHand.cshtml" />
+    <Content Include="Views\Home\Management.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11968</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11968/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
